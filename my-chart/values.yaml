@@ -1,0 +1,16 @@
+grafana:
+  server:
+    adminPassword: admin
+    persistentVolume:
+      enabled: false
+    setDatasource:
+      enabled: true
+      image: appropriate/curl:latest
+      datasource:
+        name: default
+        type: influxdb
+        url: WHAT-GOES-HERE
+        database: default
+        access: proxy
+        isDefault: true
+      restartPolicy: OnFailure
